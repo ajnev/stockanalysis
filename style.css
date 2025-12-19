@@ -1,0 +1,67 @@
+:root {
+    --warm-bg: #fdf5e6;
+    --accent-orange: #ff8c42;
+    --deep-shadow: rgba(85, 45, 0, 0.2);
+    --card-bg: #ffffff;
+}
+
+body {
+    background-color: var(--warm-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.scene {
+    perspective: 1000px;
+}
+
+.dashboard-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 800px;
+    /* 3D Transform */
+    transform: rotateX(10deg) rotateY(-5deg);
+    box-shadow: 
+        20px 40px 60px var(--deep-shadow),
+        0px 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.5s ease;
+}
+
+.dashboard-card:hover {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: #5d4037;
+}
+
+.controls input, .controls select, .controls button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-left: 10px;
+    outline: none;
+}
+
+.controls button {
+    background: var(--accent-orange);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #d35400;
+}
+
+.controls button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d35400;
+}
